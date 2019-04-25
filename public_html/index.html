@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>jQuery Draggable Boxes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <style>
+            body {
+                font-family: 'Amatic SC', cursive;
+                font-weight: bold;
+            }
+            h1{
+                padding-left: 10rem;
+            }
+            ul{
+                list-style-type:none;
+            }
+            .bg-color1 {
+                background-color: gold;
+            }
+            .bg-color2 {
+                 background-color: #00ccff;
+            }
+            .sortableBox{ list-style-type: none; 
+                        float: left;
+                        margin: 3rem; 
+                        padding: 2rem; 
+                        width: 30%;
+            }
+            
+            #sortable1 li { 
+
+                margin: 3px 3px 3px 3px; 
+                padding: 0.4em; 
+                padding-left: 1.5em; 
+                font-size: 1.5em; 
+                height: 3rem; 
+                cursor: all-scroll;}
+
+            #sortable2 li { 
+
+                margin: 3px 3px 3px 3px; 
+                padding: 0.4em; 
+                padding-left: 1.5em; 
+                font-size: 1.5em; 
+                height: 3rem; 
+                cursor: all-scroll;}
+
+        </style>
+    </head>
+    <body>
+        <h1>Put Your Ice Cream Favorites in Order using your mouse.</h1>
+
+        <ul id="sortable1" class="sortableBox">
+            <li class="bg-color1">Chocolate chip cookie dough</li>
+            <li class="bg-color1">Butter pecan</li>
+            <li class="bg-color1">Cookies and cream</li>
+            <li class="bg-color1">Mint chocolate chip</li>
+            <li class="bg-color1">Butter brickle</li>
+            <li class="bg-color1">Rocky road</li>
+            <li class="bg-color1">Moose tracks</li>
+            <li class="bg-color1">Chocolate</li>
+            <li class="bg-color1">Vanilla</li>
+            <li class="bg-color1">Chocolate chip</li>
+        </ul>
+        
+        <ul id="sortable2" class="sortableBox">
+            <li class="bg-color2">Banana Nut</li>
+            <li class="bg-color2">Neopolitan</li>
+            <li class="bg-color2">Root Beer Float</li>
+            <li class="bg-color2">Almond Joy</li>
+            <li class="bg-color2">Orange cream</li>
+            <li class="bg-color2">Peach</li>
+            <li class="bg-color2">Huckleberry</li>
+            <li class="bg-color2">Chocolate Malt</li>
+            <li class="bg-color2">Bourbon vanilla</li>
+            <li class="bg-color2">Praline pecan</li>
+        </ul>
+
+
+        <script>
+            $(function () {
+                $("#sortable1, #sortable2").sortable(
+                        {connectWith: ".sortableBox"})
+                        .disableSelection();
+            });
+        </script>
+    </body>
+</html>
